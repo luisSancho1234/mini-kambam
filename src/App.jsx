@@ -81,19 +81,23 @@ function App() {
             className='flex w-full flex-col gap-2 text-start p-4 border bg-gray-500 rounded-md shadow-md'>
               <h2>{ item.name ? item.name : 'No Name' }</h2>
               <p>{ item.description ? item.description : '-------' }</p>
-              <select id='status'
-                value={ item.prioridade }
-                onChange={(e)=>(setPrioridade(e,index,indexJ))}
-                className={ `p-1 border rounded-lg
-                  ${ item.prioridade === 'low' ? 'bg-blue-500' :
-                  item.prioridade === 'normal' ? 'bg-green-500' :
-                  item.prioridade === 'high' ? 'bg-orange-400' : ''}
-                  ` 
-                  }>
-                <option value='low'>Baixa</option>
-                <option value='normal'>Normal</option>
-                <option value='high'>Alta</option>
-              </select>
+              <div className='flex flex-col gap-0'>
+                <p className='text-sm ml-1'>Prioridade</p>
+                <select id='status'
+                  value={ item.prioridade }
+                  onChange={(e)=>(setPrioridade(e,index,indexJ))}
+                  className={ `p-1 border rounded-lg
+                    ${ item.prioridade === 'low' ? 'bg-blue-500' :
+                    item.prioridade === 'normal' ? 'bg-green-500' :
+                    item.prioridade === 'high' ? 'bg-orange-400' : ''}
+                    ` 
+                    }>
+                  <option value='low'>Baixa</option>
+                  <option value='normal'>Normal</option>
+                  <option value='high'>Alta</option>
+                </select>
+              </div>
+              
               <div className='flex items-center justify-center bg-red-800 hover:bg-red-950 text-white px-4 py-2 rounded-lg'
               onClick={() => excluir(index, indexJ)}>
                 {'Excluir'}
