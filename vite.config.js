@@ -3,9 +3,9 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
+  base:'/mini-kambam/',
   plugins: [
     react(),
     tailwindcss(),
-  ],
-  base:"/mini-kambam"
+  ]
 })
