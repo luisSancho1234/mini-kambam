@@ -2,6 +2,8 @@ import { useEffect, useState, useRef } from 'react';
 import './App.css';
 import InputComponent from './components/InputComponent';
 import { getStorage, setStorage } from './services/StorageService';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 
 function App() {
   const [lista, setLista] = useState(getStorage());
@@ -78,8 +80,13 @@ function App() {
           {
           lista[indexJ].map((item, index) => (
             <div draggable id='card' key={ index } onDragStart={() => onDragStart(indexJ, index, item)}
-            className='flex w-full flex-col gap-2 text-start p-4 border bg-gray-500 rounded-md shadow-md'>
-              <h2>{ item.name ? item.name : 'No Name' }</h2>
+            className='flex w-full flex-col gap-2 text-start px-3 py-2 border bg-gray-500 rounded-md shadow-md'>
+              <div className='flex justify-between items-center'>
+                <h2>{ item.name ? item.name : 'No Name' }</h2>
+                <div className='bg-gray-300 rounded-sm border border-red-950 hover:border-red-800 flex justify-center items-center h-[22px] w-[22px] shadow-2xs text-red-950 hover:text-red-800'>
+                  <FontAwesomeIcon icon={faTrashAlt} onClick={() => excluir(index, indexJ)} title='Excluir' />
+                </div>
+              </div>
               <p>{ item.description ? item.description : '-------' }</p>
               <div className='flex flex-col gap-0'>
                 <p className='text-sm ml-1'>Prioridade</p>
@@ -98,10 +105,7 @@ function App() {
                 </select>
               </div>
               
-              <div className='flex items-center justify-center bg-red-800 hover:bg-red-950 text-white px-4 py-2 rounded-lg'
-              onClick={() => excluir(index, indexJ)}>
-                {'Excluir'}
-                </div>
+              
 
             </div>
           ))
