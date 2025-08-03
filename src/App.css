@@ -1,7 +1,10 @@
 
 #root {
   all:unset;
+  width: 100%;
+  height: 100%;
   text-align: center;
+  --azul-bg : #131727;
 }
 
 .logo {
@@ -17,17 +20,26 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
 body {
+  background-color:  #131727;
   display: flex;
   flex-direction: column;
-  padding-top: 20;
+  width: 100%;
+  height: 100%;
   font-family: 'Poppins', sans-serif;
   h1, h2{
     font-weight: 600;
   }
   h2{
-    font-size: large;
+    font-size: xx-large;
   }
   h3, h4{
     font-weight: 400;
@@ -51,9 +63,7 @@ option {
   }
 }
 
-.card {
-  padding: 2em;
-}
+
 
 .read-the-docs {
   color: #888;
