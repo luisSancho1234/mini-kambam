@@ -4,9 +4,7 @@ Meu primeiro projeto React + Vite + Tailwindcss
 
 Uma simples lista de tarefas com coluna e salvamento em localStorage
 
-Fiz algumas mecânicas simples
-
-v0.0.0
+Disponível em https://luissancho1234.github.io/mini-kambam/
 
 ## run 
 ### > npm run dev
